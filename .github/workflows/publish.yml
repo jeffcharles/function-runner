@@ -34,5 +34,5 @@ jobs:
         run: |
           # Upload all files from the build job
           for file in artifacts/*; do
-            gh release upload ${{ inputs.tag_name || github.event.release.tag_name }} $file
+            gh release upload ${{ inputs.tag_name || github.event.release.tag_name }} $file --repo ${{ github.repository }}
           done
